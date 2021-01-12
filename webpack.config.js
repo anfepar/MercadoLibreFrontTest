@@ -14,6 +14,7 @@ module.exports = {
       "@/components": path.resolve(__dirname, "./src/components/"),
       "@/assets": path.resolve(__dirname, "./src/assets/"),
       "@/constants": path.resolve(__dirname, "./src/constants/"),
+      "@/routes": path.resolve(__dirname, "./src/routes/"),
     },
     extensions: [".js", ".jsx", ".json"],
   },
@@ -46,16 +47,19 @@ module.exports = {
       },
       {
         test: /\.(png|gif|jpg)$/,
-        use:[
-            {
-                "loader":"file-loader",
-                options: {
-                    name:"assets/[hash].[ext]"
-                }
-            }
-        ]
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "assets/[hash].[ext]",
+            },
+          },
+        ],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebPackPlugin({
