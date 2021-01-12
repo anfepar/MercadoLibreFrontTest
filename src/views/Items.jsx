@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "@/components/Header";
 import SearchCategories from "@/components/SearchCategories";
-import Product from "../components/Product";
+import ProductItem from "@/components/Product";
 const Items = () => {
   const categories = [
     "Electronica, audio y video",
@@ -11,13 +11,13 @@ const Items = () => {
     "32 GB",
   ];
 
-  const items = ["iPhod","iPhone"];
+  const items = ["iPhod", "iPhone"];
   return (
     <div>
       <Header />
       <SearchCategories categories={categories} />
       {items.map((item) => (
-        <Product key={item} id={item} />
+        <ProductItem key={item} id={item} />
       ))}
     </div>
   );
