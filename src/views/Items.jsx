@@ -1,24 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
-import SearchCategories from "@/components/SearchCategories";
-import ProductItem from "@/components/Product";
+import ProductItem from "@/components/ProductItem";
+import { useLocation } from "react-router-dom";
+import { fetchGet } from "../utils/fetchApi";
 const Items = () => {
-  const categories = [
-    "Electronica, audio y video",
-    "iPhod",
-    "Reproductores",
-    "iPod touch",
-    "32 GB",
-  ];
-
-  const items = ["iPhod", "iPhone"];
+  const location = useLocation();
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    if (location.search) {
+      const query = location.search.split("search=")[1];
+      fetchGet(`items?q=${query}`).then((apiItems) => {
+        setItems(apiItems);
+      });
+    }
+  }, [location, setItems]);
   return (
     <div>
       <Header />
-      <SearchCategories categories={categories} />
-      {items.map((item) => (
-        <ProductItem key={item} id={item} />
-      ))}
+      {items &&
+        items.map((item) => (
+          <ProductItem
+            key={item.id}
+            title={item.title}
+            picture={item.picture}
+            price={item.price}
+            freeShipping={item.free_shipping}
+          />
+        ))}
     </div>
   );
 };

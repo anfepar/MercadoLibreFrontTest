@@ -1,18 +1,13 @@
 import React from "react";
-
+import { numberToCurrency } from "@/utils/currencyFormater";
 const ProductItem = (props) => {
-  const title = "Iphod";
-  const image = "";
-  const location = "BTA";
-  const description = "lorem ipum";
-  const price = "5000";
+  const { title, picture, price, freeShipping } = props;
   return (
     <section>
-      <img src={image} alt={title} />
+      <img src={picture} alt={title} />
       <h1>{title}</h1>
-      <h1>{price}</h1>
-      <p>{description}</p>
-      <h3>{location}</h3>
+      <h3>{freeShipping}</h3>
+      <h1>{price ? numberToCurrency(price.amount) : ""}</h1>
     </section>
   );
 };
