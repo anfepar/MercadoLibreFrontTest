@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import STRINGS from "@/constants/strings";
 import { useHistory } from "react-router-dom";
-
+import "@/assets/styles/components/SearchBar.scss";
+import searchIcon from "@/assets/static/search.png";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   let history = useHistory();
@@ -16,14 +17,16 @@ const SearchBar = () => {
   };
 
   return (
-    <section>
+    <section className="searchBar">
       <input
         onChange={handleInputChange}
         type="text"
         className="input"
         placeholder={STRINGS.SEARCH_BAR.INPUT_PLACEHOLDER}
       />
-      <button onClick={handleSearch}>buscar</button>
+      <button onClick={handleSearch}>
+        <img src={searchIcon} alt="search button" />
+      </button>
     </section>
   );
 };

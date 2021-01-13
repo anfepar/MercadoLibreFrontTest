@@ -1,0 +1,13 @@
+@import "@/assets/styles/Vars.scss";
+
+.header {
+  height: 8rem;
+  background-color: $color-brand;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    height: 5rem;
+    width: auto;
+  }
+}
