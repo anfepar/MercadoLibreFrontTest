@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import ProductItem from "@/components/ProductItem";
 import { useLocation } from "react-router-dom";
-import { fetchGet } from "../utils/fetchApi";
+import { fetchGet } from "@/utils/fetchApi";
 const Items = () => {
   const location = useLocation();
   const [items, setItems] = useState([]);
