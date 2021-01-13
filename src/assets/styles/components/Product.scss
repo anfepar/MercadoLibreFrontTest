@@ -66,3 +66,20 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 600px) {
+  .Product__details {
+    flex-direction: column;
+  }
+
+  .Product__details__picture {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: auto;
+      height: 30rem;
+    }
+  }
+}
