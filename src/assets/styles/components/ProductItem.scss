@@ -66,3 +66,14 @@
 .freeShippingIcon {
   height: 2rem;
 }
+
+@media (max-width: 600px) {
+  .ProductItem {
+    width: 95%;
+  }
+
+  .ProductItem__body {
+    flex-direction: column;
+    justify-content: start;
+  }
+}
