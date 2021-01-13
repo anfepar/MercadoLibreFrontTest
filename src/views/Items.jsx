@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ProductItem from "@/components/ProductItem";
 import { useLocation } from "react-router-dom";
 import { fetchGet } from "@/utils/fetchApi";
+import LoaderCircle from "@/components/LoaderCircle";
 
 const Items = () => {
   const location = useLocation();
@@ -18,7 +19,7 @@ const Items = () => {
   return (
     <div>
       <Header />
-      {items &&
+      {items.length ? (
         items.map((item) => (
           <ProductItem
             key={item.id}
@@ -29,7 +30,10 @@ const Items = () => {
             freeShipping={item.free_shipping}
             location={item.location}
           />
-        ))}
+        ))
+      ) : (
+        <LoaderCircle />
+      )}
     </div>
   );
 };
