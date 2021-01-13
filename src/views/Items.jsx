@@ -21,6 +21,7 @@ const Items = () => {
         items.map((item) => (
           <ProductItem
             key={item.id}
+            id={item.id}
             title={item.title}
             picture={item.picture}
             price={item.price}
