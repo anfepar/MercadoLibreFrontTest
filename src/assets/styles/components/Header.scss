@@ -12,3 +12,10 @@
     width: auto;
   }
 }
+
+@media (max-width: 600px) {
+  .header {
+    height: 15rem;
+    flex-direction: column;
+  }
+}
