@@ -11,15 +11,22 @@ const SearchBar = () => {
     setQuery(e.target.value);
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = () => {
     const urlFormatQuery = encodeURIComponent(query);
     history.push(`/items?search=${urlFormatQuery}`);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      handleSearch();
+    }
   };
 
   return (
     <section className="searchBar">
       <input
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         type="text"
         className="input"
         placeholder={STRINGS.SEARCH_BAR.INPUT_PLACEHOLDER}
