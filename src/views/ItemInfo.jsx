@@ -6,7 +6,7 @@ import { fetchGet } from "@/utils/fetchApi";
 
 const ItemInfo = () => {
   const { id } = useParams();
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState(null);
 
   useEffect(() => {
     fetchGet(`items/${id}`).then((apiItem) => {
@@ -16,7 +16,16 @@ const ItemInfo = () => {
   return (
     <section>
       <Header />
-      <Product condition={item.condition} soldQuantity={item.sold_quantity} title={item.title} picture={item.picture} price={item.price} description={item.description} />
+      {item && (
+        <Product
+          condition={item.condition}
+          soldQuantity={item.sold_quantity}
+          title={item.title}
+          picture={item.picture}
+          price={item.price}
+          description={item.description}
+        />
+      )}
     </section>
   );
 };

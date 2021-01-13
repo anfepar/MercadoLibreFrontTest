@@ -1,0 +1,68 @@
+@import "@/assets/styles/Vars.scss";
+
+.Product {
+  width: 80%;
+  height: auto;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3.2rem;
+  color: $color-darkgrey;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.Product__details {
+  display: flex;
+  &__picture {
+    width: 68rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.Product__description {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  &__title {
+    font-size: 2.8rem;
+  }
+  &__text {
+    font-size: 1.6rem;
+    color: $color-grey;
+  }
+}
+
+.Product__details__info {
+  &__state {
+    font-size: 1.4rem;
+    margin-bottom: 1.6rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    margin-bottom: 3.2rem;
+    max-width: 25rem;
+    font-weight: 500;
+  }
+
+  &__price {
+    font-size: 4rem;
+    margin-bottom: 3.2rem;
+    max-width: 25rem;
+    font-weight: 500;
+  }
+
+  &__button {
+    height: 4rem;
+    width: 100%;
+    border: none;
+    background-color: $color-button;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
