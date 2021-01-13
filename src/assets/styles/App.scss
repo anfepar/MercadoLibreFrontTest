@@ -1,3 +1,6 @@
+@import "@/assets/styles/Vars.scss";
+@import "@/assets/styles/Media.scss";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,4 +9,14 @@
 
 html {
   font-size: 62.5%;
+  background-color: $color-background;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $theme-font;
+}
+
+a {
+  cursor: pointer;
 }
