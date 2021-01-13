@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ProductItem from "@/components/ProductItem";
 import { useLocation } from "react-router-dom";
 import { fetchGet } from "@/utils/fetchApi";
+
 const Items = () => {
   const location = useLocation();
   const [items, setItems] = useState([]);
@@ -26,6 +27,7 @@ const Items = () => {
             picture={item.picture}
             price={item.price}
             freeShipping={item.free_shipping}
+            location={item.location}
           />
         ))}
     </div>
