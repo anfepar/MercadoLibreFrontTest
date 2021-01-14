@@ -12,5 +12,6 @@ const STRINGS = {
     SOLD: "vendidos",
     BUY: "Comprar",
   },
+  API_URL: "http://18.216.100.39:3000/api/",
 };
 export default STRINGS;

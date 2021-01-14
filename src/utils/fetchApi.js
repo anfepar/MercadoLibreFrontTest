@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:3000/api/";
+import STRINGS from "@/constants/strings";
 
 export function fetchGet(url) {
-  return fetch(`${API_URL}${url}`).then((res) => {
+  return fetch(`${STRINGS.API_URL}${url}`).then((res) => {
     return res.json().then((jsonRes) => {
       return jsonRes.data;
     });
