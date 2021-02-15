@@ -2,8 +2,6 @@
 
 This repo is a React App 
 
-You could test it using the following link http://ec2-18-216-100-39.us-east-2.compute.amazonaws.com
-
 ## Getting started
 
 Steps:
